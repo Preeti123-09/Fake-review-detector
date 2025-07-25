@@ -1,0 +1,14 @@
+fake-review-detector/
+│
+├── streamlit_gui/
+│   ├── app.py
+│   ├── requirements.txt
+│   └── README.md
+│
+├── model_training/
+│   ├── train_model.py
+│   ├── vectorizer.pkl
+│   ├── fake_review_model.pkl
+│   └── dataset.csv
+│
+└── LICENSE
