@@ -1,0 +1,14 @@
+# Fake Review Detector
+
+An NLP-based Streamlit app to detect whether a review is fake or genuine.
+
+## 🔧 Tech Stack
+- Python, Scikit-learn
+- TfidfVectorizer (text vectorization)
+- Logistic Regression
+- Streamlit (UI)
+
+## 🚀 How to Run
+1. Train model:
+   ```bash
+   python model_training/train_model.py
