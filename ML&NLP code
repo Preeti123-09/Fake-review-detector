@@ -1,0 +1,23 @@
+import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+import pickle
+
+# Load dataset
+df = pd.read_csv("dataset.csv")
+
+# Preprocess
+X = df["review"]
+y = df["label"]  # 1 for fake, 0 for genuine
+
+# Vectorize
+vectorizer = TfidfVectorizer(stop_words="english", max_features=5000)
+X_vec = vectorizer.fit_transform(X)
+
+# Train model
+model = LogisticRegression()
+model.fit(X_vec, y)
+
+# Save model and vectorizer
+pickle.dump(model, open("fake_review_model.pkl", "wb"))
+pickle.dump(vectorizer, open("vectorizer.pkl", "wb"))
